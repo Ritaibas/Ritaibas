@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARLLETICA DESIGN | Home Utilities & Representation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* =========================================
+           1. VARIABLES & RESET
+           ========================================= */
+        :root {
+            --bg-color: #FAFAFA; /* Off-white gallery background */
+            --text-main: #1A1A1A; /* Sharp black */
+            --text-muted: #666666;
+            --accent-color: #A38458; /* Muted Bronze/Gold */
+            --secondary-bg: #EFEFEF;
+            --border-color: #E0E0E0;
+            
+            --font-heading: 'Tenor Sans', sans-serif; /* Elegant serif-like sans */
+            --font-body: 'Work Sans', sans-serif;
+            
+            --container-width: 1200px;
+            --transition: all 0.4s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p {
+            margin-bottom: 2rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            font-size: 1.05rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* =========================================
+           2. UTILITIES
+           ========================================= */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 120px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .section-subtitle {
+            display: block;
+            color: var(--accent-color);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 45px;
+            background-color: var(--text-main);
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            border: 1px solid var(--text-main);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--text-main);
+        }
+
+        .divider {
+            width: 60px;
+            height: 1px;
+            background-color: var(--accent-color);
+            margin: 0 auto 40px auto;
+        }
+
+        /* =========================================
+           3. HEADER
+           ========================================= */
+        header {
+            background-color: #fff;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 25px 0;
+        }
+
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 40px;
+        }
+
+        nav a {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* =========================================
+           4. HERO SECTION
+           ========================================= */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(250,250,250,0.8), rgba(250,250,250,0.6)), url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.2;
+            margin-bottom: 30px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #444;
+            margin-bottom: 50px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* =========================================
+           5. ABOUT US
+           ========================================= */
+        .about {
+            background-color: #fff;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-img {
+            position: relative;
+        }
+
+        .about-img img {
+            box-shadow: 20px 20px 0 var(--secondary-bg);
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+        }
+
+        /* =========================================
+           6. SERVICES
+           ========================================= */
+        .services {
+            background-color: var(--secondary-bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .service-item {
+            background-color: #fff;
+            padding: 50px 40px;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+        }
+
+        .service-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        /* =========================================
+           7. ADVANTAGES
+           ========================================= */
+        .advantages {
+            background-color: #fff;
+            position: relative;
+        }
+
+        .adv-layout {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .adv-content {
+            flex: 1;
+            padding: 100px 60px;
+            background-color: #1A1A1A; /* Contrast Dark */
+            color: #fff;
+            min-width: 400px;
+        }
+
+        .adv-content h2 {
+            color: #fff;
+        }
+
+        .adv-content .section-subtitle {
+            color: var(--accent-color);
+        }
+
+        .adv-content p {
+            color: #aaa;
+        }
+
+        .adv-image {
+            flex: 1;
+            min-width: 400px;
+            background: url('https://images.unsplash.com/photo-1594912767083-7d227c28c89b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80') center/cover;
+            min-height: 500px;
+        }
+
+        .adv-list-item {
+            margin-bottom: 40px;
+            padding-left: 20px;
+            border-left: 1px solid var(--accent-color);
+        }
+
+        .adv-list-item h4 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        /* =========================================
+           8. PROCESS
+           ========================================= */
+        .process {
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 280px;
+            padding: 20px;
+        }
+
+        .step-num {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            color: var(--secondary-bg);
+            margin-bottom: -20px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 0 #fff; /* outline effect */
+        }
+
+        .step-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* =========================================
+           9. CONTACT
+           ========================================= */
+        .contact {
+            background-color: var(--secondary-bg);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            background-color: #fff;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+        }
+
+        .contact-info {
+            padding: 80px 60px;
+            background-color: #fff;
+        }
+
+        .info-block {
+            margin-bottom: 40px;
+        }
+
+        .info-block h5 {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .info-block p {
+            color: var(--text-main);
+            font-size: 1.1rem;
+        }
+
+        .contact-form {
+            padding: 80px 60px;
+            background-color: #FAFAFA;
+            border-left: 1px solid #eee;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            background: #fff;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        input:focus, textarea:focus {
+            border-color: var(--accent-color);
+        }
+
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* =========================================
+           10. FOOTER
+           ========================================= */
+        footer {
+            background-color: #111;
+            color: #888;
+            padding: 60px 0;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        footer p {
+            margin: 0;
+            color: #666;
+        }
+
+        /* =========================================
+           RESPONSIVE
+           ========================================= */
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 2.8rem; }
+            .about-grid, .contact-container { grid-template-columns: 1fr; }
+            .adv-layout { flex-direction: column; }
+            .adv-image { order: -1; min-height: 300px; }
+            .contact-form { border-left: none; border-top: 1px solid #eee; }
+            .nav-flex { flex-direction: column; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-flex">
+            <div class="logo">ARLLETICA <span>DESIGN</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#services">Curatorship</a></li>
+                    <li><a href="#advantages">Expertise</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Elevating Domestic Utilities <br> to Art Forms</h1>
+            <p>Arlletica Design bridges the gap between functional necessity and aesthetic desire. We represent the finest brands of home goods, bringing sophistication to the Brazilian market.</p>
+            <a href="#contact" class="btn">Explore Partnerships</a>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <span class="section-subtitle">Who We Are</span>
+                    <h2 class="section-title">Design with Purpose</h2>
+                    <div class="divider" style="margin-left: 0;"></div>
+                    
+                    <p>ARLLETICA DESIGN REPRESENTACOES E COMERCIO DE UTILIDADES DOMESTICAS LTDA is a premier commercial representative and trading house based in São Paulo. We specialize in "Utilidades Domesticas" — essential home goods that blend practical function with high-end design.</p>
+                    
+                    <p>In a market often saturated with generic products, we stand as curators of quality. We connect innovative international and local manufacturers with Brazil's leading retailers and interior designers. Our mission is to elevate the everyday experience of the home through objects that are as beautiful as they are useful.</p>
+                    
+                    <p>Whether acting as commercial representatives for established brands or trading exclusive collections directly, Arlletica Design ensures that every product we touch meets rigorous standards of durability, style, and market relevance.</p>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Minimalist Home Utilities">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-padding services">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-subtitle">What We Do</span>
+                <h2 class="section-title">Commercial Solutions</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">&#9733;</div>
+                    <h3>Commercial Representation</h3>
+                    <p>We act as the official voice and sales force for premium home goods manufacturers. By leveraging our deep network in São Paulo and beyond, we ensure your brand reaches the right shelves in high-end department stores and boutiques.</p>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon">&#9689;</div>
+                    <h3>Distribution & Trade</h3>
+                    <p>Beyond representation, we engage in the direct trade of domestic utilities. We identify gaps in the local market and source products that fill them, managing logistics and distribution to ensure seamless availability for our B2B clients.</p>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon">&#128065;</div>
+                    <h3>Market Analysis & Curation</h3>
+                    <p>Understanding the Brazilian consumer is complex. We provide consultancy services to foreign brands looking to enter the market, offering insights on pricing, consumer preferences for home decor, and competitive positioning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="advantages" class="advantages">
+        <div class="adv-layout">
+            <div class="adv-image"></div> <div class="adv-content">
+                <span class="section-subtitle">Why Partner With Us</span>
+                <h2 class="section-title">The Arlletica Standard</h2>
+                
+                <div class="adv-list-item">
+                    <h4>Strategic Location</h4>
+                    <p>Based in São Paulo, the economic heart of Brazil, we are positioned at the nexus of the country's design and retail industries, ensuring rapid market penetration.</p>
+                </div>
+
+                <div class="adv-list-item">
+                    <h4>Curated Portfolio</h4>
+                    <p>We do not represent everything; we represent the best. Our portfolio is carefully selected to ensure synergy between brands, maintaining a reputation for excellence that opens doors.</p>
+                </div>
+
+                <div class="adv-list-item">
+                    <h4>Operational Efficiency</h4>
+                    <p>From negotiation to final delivery, our processes are streamlined. We understand the logistics of "Comercio de Utilidades," minimizing friction for both suppliers and buyers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="section-padding process">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-subtitle">Our Methodology</span>
+                <h2 class="section-title">Path to Market</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-num">01</div>
+                    <div class="step-content">
+                        <h3>Discovery</h3>
+                        <p>We analyze the potential of a brand or product line. We look for unique selling points that align with the current trends in Brazilian home interior design.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-num">02</div>
+                    <div class="step-content">
+                        <h3>Strategy & Partnership</h3>
+                        <p>We formalize the representation agreement, defining territories and sales targets. We develop a tailored go-to-market strategy for your domestic utilities.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-num">03</div>
+                    <div class="step-content">
+                        <h3>Distribution & Growth</h3>
+                        <p>We execute the sales plan, presenting your products to key buyers. We monitor performance and iterate strategies to ensure sustainable growth.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding contact">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-subtitle">Inquiries</span>
+                <h2 class="section-title">Connect With Us</h2>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-block">
+                        <h5>Headquarters</h5>
+                        <p>SAO PAULO, SAO PAULO<br>Brazil</p>
+                    </div>
+                    
+                    <div class="info-block">
+                        <h5>Electronic Mail</h5>
+                        <p>info@arlleticadesignrepresentacoes.info</p>
+                    </div>
+
+                    <div class="info-block">
+                        <h5>Business Focus</h5>
+                        <p>Commercial Representation &<br>Trade of Domestic Utilities</p>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <div style="display: flex; gap: 20px;">
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="text" placeholder="Company Name">
+                        </div>
+                        <input type="email" placeholder="Email Address" required>
+                        <input type="text" placeholder="Product Category / Interest">
+                        <textarea placeholder="Tell us about your brand or inquiry..."></textarea>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ARLLETICA DESIGN REPRESENTACOES E COMERCIO DE UTILIDADES DOMESTICAS LTDA.</p>
+            <p style="font-size: 0.75rem; margin-top: 10px; opacity: 0.6;">All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
